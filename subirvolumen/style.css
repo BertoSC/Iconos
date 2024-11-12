@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.volume-container {
+    text-align: center;
+}
+
+.bathtub {
+    width: 150px;
+    height: 80px;
+    border-radius: 0px 0px 25px 25px; /* Bordes redondeados en la parte inferior */
+    background-color: white;
+    position: relative;
+    border: 8px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Para que el agua suba desde la parte inferior */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Asegura que el agua no sobresalga */
+}
+
+.water {
+    width: 100%; /* El agua ocupará el 100% del contenedor */
+    height: 0%; /* Comienza vacío */
+    background-color: #1abc9c;
+    position: absolute;
+    bottom: 0;
+    transition: height 0.5s ease-out;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%); /* Forma recta por defecto */
+}
+
+.water-fall {
+    width: 5px;
+    height: 0;
+    background-color: #1abc9c;
+    position: absolute;
+    top: -50px; /* Un poco por encima de la bañera */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: height 0.3s ease-out, top 0.3s ease-out;
+}
+
+#volume-level {
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Efecto de caída del chorro de agua */
+@keyframes waterFallEffect {
+    0% {
+        height: 0;
+        top: -50px;
+    }
+    100% {
+        height: 60px; /* El chorro de agua caerá hasta una cierta altura */
+        top: 10px;
+    }
+}

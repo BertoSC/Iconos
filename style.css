@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+}
+
+.download-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.download-arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 35px solid #3498db;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.download-arrow.active {
+    transform: scale(0); /* Flecha desaparece al iniciar la descarga */
+}
+
+.download-message {
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #3498db;
+    opacity: 0;
+    border-radius: 50%;
+    animation: explode 0.5s forwards;
+}
+
+@keyframes explode {
+    to {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 1;
+    }
+}
