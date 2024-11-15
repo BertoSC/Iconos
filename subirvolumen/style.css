@@ -24,7 +24,6 @@ body {
     background-color: white;
     position: relative;
     border: 8px solid white;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Para que el agua suba desde la parte inferior */
@@ -60,6 +59,32 @@ body {
     font-weight: bold;
 }
 
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+button {
+    font-size: 20px;
+    width: 50px; /* Ancho fijo para ambos botones */
+    height: 50px; /* Alto fijo para ambos botones */
+    border: none;
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinear el contenido al centro */
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
 /* Efecto de caída del chorro de agua */
 @keyframes waterFallEffect {
     0% {
@@ -69,5 +94,17 @@ body {
     100% {
         height: 60px; /* El chorro de agua caerá hasta una cierta altura */
         top: 10px;
+    }
+}
+
+/* Efecto de subida inversa del agua */
+@keyframes waterFallReverse {
+    0% {
+        height: 60px; /* Comienza con el chorro visible */
+        top: 10px;
+    }
+    100% {
+        height: 0; /* Se retrae hacia arriba */
+        top: -50px;
     }
 }

@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Volumen</title>
+    <title>Regulador de Volumen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="volume-container">
-        <div class="bathtub" onclick="increaseVolume()">
+        <div class="bathtub">
             <div class="water"></div>
             <div class="water-fall"></div> <!-- Chorro de agua -->
         </div>
         <div id="volume-level">Volumen: 0</div>
+        <div class="controls">
+            <button id="increase-button">+</button>
+            <button id="decrease-button">-</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
