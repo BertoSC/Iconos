@@ -27,7 +27,7 @@ body {
 }
 
 .download-arrow.active {
-    transform: scale(0); /* Flecha desaparece al iniciar la descarga */
+    transform: scale(0);
 }
 
 .download-message {
